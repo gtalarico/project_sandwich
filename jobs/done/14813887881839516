@@ -1,0 +1,34 @@
+{
+  "filters": {
+    "category": "OST_Floors", 
+    "istype": 0, 
+    "isnottype": 1
+  }, 
+  "filepath": "C:\\Users\\gtalarico\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\File1.rvt", 
+  "job_id": "14813887881839516", 
+  "status": "done", 
+  "action": "get", 
+  "response": [
+    {
+      "id": 3557, 
+      "class": "Floor", 
+      "area": "271.11 SF", 
+      "family": "Floor", 
+      "level": "Level 1"
+    }, 
+    {
+      "id": 3699, 
+      "class": "Floor", 
+      "area": "576.11 SF", 
+      "family": "Floor", 
+      "level": "Level 1"
+    }, 
+    {
+      "id": 3744, 
+      "class": "Floor", 
+      "area": "271.11 SF", 
+      "family": "Floor", 
+      "level": "Level 1"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{% block script %}
+<script>
+
+
+
+$(document).ready(function(e){
+
+// Set Input
+$('#direct-search-input').delay(1500).fadeIn(function() {
+  $(this).focus();
+});
+
+
+// Click Dropdown
+$('#direct-search li').on('mousedown', function(){
+  var year = $(this).text()
+  $('#dropdown-label').text(year)
+  $('#direct-search-year').attr('value', year)
+  $("#direct-search-year").removeClass('btn-danger')
+  $("#direct-search").find('.form-group').removeClass('has-error')
+  $("#direct-search").find('.control-label').html("&nbsp;")
+})
+
+function search(query, year){
+  var searchUrl = '/' + year + '/?query=' + query + '#searchModal'
+  window.location.href = searchUrl;
+}
+
+// $('#direct-search-go').on('click', function(){})
+$("#direct-search").submit(function(e) {
+  e.preventDefault() // Keeps page from submitting and reloading
+  var year = $('#direct-search-year').attr('value')
+  var query = $('#direct-search-input').val()
+  console.log(year)
+  if (year === 'UNDEFINED'){
+    $("#direct-search").find('.form-group').addClass('has-error')
+    $("#direct-search").find('.control-label').text('Select a year')
+    $("#direct-search-year").addClass('btn-danger')
+  }
+  else if (query.length<2) {
+    $("#direct-search").find('.form-group').addClass('has-error')
+    $("#direct-search").find('.control-label').text('Search term is too short')
+  }
+  else {
+    search(query, year)
+  }
+});
+
+$('#toggle-contribute').on('click', function(){
+  $('#contribute').slideToggle()
+})
+$('#toggle-other-resources').on('click', function(){
+  $('#other-resources').slideToggle()
+})
+
+});
+
+</script>
+{% endblock %}

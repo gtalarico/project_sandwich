@@ -1,0 +1,46 @@
+body {
+    color: #666;
+}
+
+#container {
+    margin: auto;
+}
+
+#header {
+    margin-top: 80px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#response-table, #done-jobs {
+    max-width: 80%;
+    margin: auto;
+    /*overflow: scroll;*/
+}
+
+#done-jobs {
+    text-align: center
+}
+
+img#sandwich {
+    margin: auto;
+
+}
+
+.top-bun {
+    /*outline: 2px dashed black;
+    padding: 1em;*/
+    height: 80px;
+    background-image: url("../img/BunTop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bottom-bun {
+    /*outline: 2px dashed black;
+    padding: 1em;*/
+    height: 80px;
+    background-image: url("../img/BunBottom.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

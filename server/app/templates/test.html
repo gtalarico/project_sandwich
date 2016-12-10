@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <title>Sandwich</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="../static/css/sandwich.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="header">
+            <h4>Project Sandwich</h4>
+        </div>
+
+
+            <!-- <form id="form_submit" action="submit">
+              <div class="row">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>File</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+        </div>
+        <div class="row">
+            <label>Category Select</label>
+            <select class="browser-default" id="category_dropdown">
+       <option value="" disabled selected>Choose a category</option>
+       {% for c in categories %}
+    <option value="{{loop.index}}">{{ c }}</option>
+      {% endfor %}
+     </select>
+        </div>
+        <div class="row">
+            <a class="waves-effect waves-light btn" id="submit_button" type="submit" form="form_submit">Sandwich!</a>
+        </div>
+        </form> -->
+
+        <div id="search" class="container">
+            <form>
+            <div class="form-group">
+                <!-- <label class="control-label">Search</label> -->
+                  <div class="input-group input-group-sm">
+                    <div class="row">
+                      <label>File Select</label>
+
+                      <select class="browser-default" id="filepath_dropdown">
+                 <!-- <option value="" disabled selected>Choose a category</option> -->
+                 {% for f in filepaths %}
+              <option value="{{ f }}">{{ f }}</option>
+                  {% endfor %}
+
+                      </select>
+              </div>
+              <div class="row">
+                  <label>Category Select</label>
+                  <select class="browser-default" id="category_dropdown">
+             <!-- <option value="" disabled selected>Choose a category</option> -->
+             {% for c in categories %}
+          <option value="{{ c }}">{{ c }}</option>
+              {% endfor %}
+
+                  </select>
+
+                    </div>
+                    <div class= "row">
+                      <button class="waves-effect waves-light btn" id="btn-search" type="submit" data-toggle="modal" data-target="#searchModal">Sandwich!</button>
+                    </div>
+
+            </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div id="response">
+
+    </div>
+
+    <table id="my-final-table">
+  <thead>
+    <th>Band</th>
+    <th>Song</th>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+  <pre id="json-records" contenteditable>
+    [
+  {
+    "band": "Weezer",
+    "song": "El Scorcho"
+  },
+  {
+    "band": "Chevelle",
+    "song": "Family System"
+  }
+]
+</pre>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="../static/js/sandwich.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.dynatable.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script>
+
+
+    var $records = $('#json-records'),
+    myRecords = JSON.parse($records.text());
+    console.log($records);
+    console.log(myRecords);
+$('#my-final-table').dynatable({
+  dataset: {
+    records: myRecords
+  }
+});
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,454 @@
+{% extends "base.html" %}
+
+<!-- Rendered tempaltes must include header() macro#} -->
+{% from '%s' % content import header with context %}
+{% block header %}
+<!-- START  API MACRO HEADER -->
+    {{ header() }}
+<!-- END  API MACRO HEADER -->
+{% endblock %}
+
+{% block content %}
+<!-- START  API HTML -->
+
+    <!-- MODAL SEARCH -->
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title truncate" id="myModalLabel"></h4>
+            <div id="result-filter-list" class="text-muted small">Filter: <span id="result-filter" class="result-tag badge"></span><span id="result-size" class="pull-right"></span></div>
+          </div>
+          <div class="modal-body">
+            <div id="result-div">
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <span class="text-muted small">Could not find what you were looking for?
+            Try a <a id="google-link" target="=_blank">Google Search</a></span>
+            {# <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>#}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL SEARCH -->
+
+    <!-- START SIDEBAR -->
+    <div class="col-sm-12 col-md-5 col-lg-4" id="sidebar">
+
+        <!-- SIDEBAR SEARCH -->
+        <div id="sidebar-search">
+            <form>
+            <div class="form-group">
+                <!-- <label class="control-label">Search</label> -->
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" id="input-search" placeholder="Search Term" autocomplete="off">
+                      <span class="input-group-btn">
+                        <button class="btn btn-primary" id="btn-search" type="submit" data-toggle="modal" data-target="#searchModal"><span class="glyphicon glyphicon-search"></span></button>
+                      </span>
+                  </div>
+            </div>
+            </form>
+        </div>
+        <!-- SIDEBAR SEARCH -->
+
+        <span id="menu-loading" class="small text-muted"><img src="{{ url_for('static', filename="img/loader.gif") }}">
+        &nbsp;Loading</span>
+        <!-- START BOOTSTRAP TREEVIEW -->
+        <div id="treeview"></div>
+        <!-- END BOOTSTRAP TREEVIEW -->
+
+    </div>
+    <!-- END SIDEBAR -->
+
+    <!-- START MAIN -->
+    <div class="col-sm-12 col-md-7 col-lg-8" id="main-sidebar">
+        <div>
+            <h4 class="truncate"> {{ schema.title if schema else 'Documentation' }} </h4>
+                {#
+                  {% if active_href and available_in %}
+                  <div id='alsofor'>
+                      <p>YEAR
+                        {% for year in available_in %}
+                        <a href="/{{year}}/{{active_href}}"> {{year}} </a>
+                        {% endfor %}
+                      </p>
+                  </div>
+                  {% endif %}
+                #}
+            <hr/>
+
+            <!-- START MAIN CONTENT -->
+            {% include '%s' % content %}
+            <!-- END MAIN CONTENT -->
+
+            <!-- START DISQUS -->
+            {% if active_href %}
+            {% include 'disqus.html' with context %}
+            {% endif %}
+            <!-- END DISQUS -->
+        </div>
+    </div>
+    <!-- END MAIN -->
+
+<!-- END API HTML -->
+{% endblock %}
+
+
+{% block script %}
+<!-- START API SCRIPT  -->
+<script>
+
+// Get Constructor.io Autocomplete Script
+$.getScript("//cnstrc.com/js/ac.js", function() {
+      $('#input-search').constructorAutocomplete({
+        key: '{{config.CONSTRUCTOR_IO_AUTOCOMPLETE_KEY}}',
+        boostRecentSearches : true,
+        maxResults : 10,
+        });
+});
+
+
+$(document).ready(function() {
+
+    // LOAD MENU
+    var string_json
+    var ajax = $.getJSON("namespace.json", function(json) {
+        string_json = JSON.stringify(json);
+        buildMenu()
+    });
+
+    // Needs fail handling
+    ajax.done(function() {
+        console.log('Ajax JSON namespace loaded.');
+        });
+
+    // LOAD MENU CALL BACK
+    function buildMenu() {
+
+        var $searchableTree = $('#treeview').treeview({
+              expandIcon: "node-icon collapsed",
+              collapseIcon: "node-icon expanded",
+              emptyIcon: "node-icon empty",
+              selectedBackColor: "#21a3a3",
+              selectedColor: "#fff",
+              selectionAllowed: false,
+              showBorder: false,
+              levels: 1,
+              enableLinks: true,
+              onhoverColor: '#e0e0e0',
+              backColor: 'inherit',
+              data: string_json,
+            });
+
+        var is_desktop = ($(window).width() > 768)
+        if (("{{active_href}}" != 'None') && is_desktop){
+            console.log('active_href is not None. Iterating to find matching href');
+            var node, activeNode
+            var activeNodeId, nodeId = 0;
+                do {
+                    node = $('#treeview').treeview("getNode", nodeId);
+                    if (node && node.href == "{{active_href}}") {
+                        // console.log(node.nodeId)
+                        activeNode = node
+                        activeNodeId = node.nodeId
+                        break;
+                    };
+                    nodeId++;
+                    }
+                while (node.nodeId != undefined);
+        };
+
+        if (activeNodeId != undefined){
+            // console.log('Found Node.')
+
+            $('#treeview').treeview('revealNode', [ activeNodeId, { silent: false } ]);
+            $('#treeview').treeview('toggleNodeSelected', [ activeNodeId, { silent: false } ]);
+            $('#treeview').treeview('toggleNodeExpanded', [ activeNodeId, { silent: false } ]);
+
+            var scrollto = $('a[href="' + activeNode.href +'"]').offset().top - 200;
+            // $('#sidebar').animate({ scrollTop: scrollto }, 500, "swing");
+            $('#sidebar').scrollTop(scrollto); // Scroll, no animation
+        }
+
+        else {
+            // console.log('Could not find matching node.')
+             if (is_desktop) {
+                // Auto Expand First level on Desktop
+                // console.log("Active Node Not found, but it's a desktop. Open Node1")
+                $('#treeview').treeview('revealNode', [ 1, { silent: false } ]);
+                };
+        };
+
+        // console.log("Hiding Loader Gif...")
+        $('#menu-loading').animate({opacity: 0},300);
+        $('#menu-loading').hide();
+        $('#treeview').animate({opacity: 1}, 300);
+
+        // $('#treeview').on('nodeExpanded', function(event, node) {
+        //     $(event.target).addClass("node-expanded")
+        //     $(event.target).removeClass("node-collapsed")
+        // });
+
+    };  // End of Build Menue Call Back Function
+
+    function search(pattern, filter, pushHistory){
+      var filter = getUrlParam('filter')
+      if ((filter == null)&&(filter == undefined)&&(filter == '0')){
+        filter = ''
+      };
+
+      if (pushHistory) {
+        history.pushState(null, null, '?query=' + pattern + '&filter=' + filter +'&#searchModal');
+      };
+
+      $('.modal-title').html('Query: <strong>'+pattern+'</strong>');
+      $('#result-div').html('<span class="small text-muted"><img src="{{ url_for('static', filename="img/loader.gif") }}">&nbsp; Loading</span>');
+      $('#google-link').attr("href", "http://www.google.com/search?q=site:www.revitapidocs.com " + pattern)
+
+      var results_json;
+      $.getJSON("searchapi?query=" + pattern, function(json) {
+          console.log('Search Ajax call successful. ')
+          results_json = json;
+          })
+          .done(function(){
+              // Search successful
+              buildResults(results_json, pattern);
+              ga('send', 'pageview', '{{year}}/?query=' + pattern);
+              // console.log('GA PV Sent:' + '?query=' + pattern)
+          }).fail(function(){
+              console.log('Search Ajax call FAILED.')
+              var results = {'error':'Could not reach search API'};
+              buildResults(results, pattern);
+          })
+    };
+    // End Search
+
+    function buildResults(results, pattern){
+        if (pattern.length < 1) { pattern = 'None'}
+        // var output
+        var content = ''
+
+
+
+        if (results.length == undefined) {
+          var numresults = 0
+        }
+        else {
+          var numresults = results.length
+        }
+
+        // TRACK SEARCH RESULTS - DISABLE
+        // track_url = '/2015/tracksearch?query=' + pattern + '&numresults='+ numresults
+        // $.get( track_url, function( data ) {
+        //       console.log('TRACKING')
+        //       console.log(data)
+        //     });
+        // TRACK SEARCH RESULTS
+
+
+
+        if (results.error) {
+            content = '<p class="text-danger">' + results.error + '</p>'
+        }
+        else{
+          $.each(results, function (index, value) {
+            var active_year = "{{year}}" // Get year in context
+            var year_class = (value.year.indexOf(active_year) == -1) ? 'text-danger': 'text-muted'
+
+            var ahref =
+            '<div class="result-entry" data-tag="' + value.tag + '">' +
+            '<h5 class="truncate"><a href="' + value.href + '">' + value.title + '</a>' +
+            '<span class="result-tag badge pull-right">' + value.tag + '</span>' + '</h5>' +
+            '<p class="member-of small">' + value.namespace + ' : ' + '<a href="' + value.member_of_href +'">' + value.member_of +'</a>' +
+            '<span class="small year ' + year_class + '">' +  value.year.join(' / ') +'</span></p>' +
+            '<p class="small description">' + value.description + '</p>' +
+            '</div>'
+            content += ahref
+          });
+
+            // This shit should really be handled somewhere else. Show alert if results is 300
+            $('#result-size').html('API {{year}} | Results: ' +  results.length);
+            if (results.length == 500) {
+                console.log('Results Truncated')
+                $('#content-wrapper').append(
+                '<div class = "alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                'Results Truncated to 500.</br> Try narrowing your search.</div>')
+
+                $(".alert").delay(8000).fadeOut(300, function() {
+                    $(this).alert('close');
+                });
+            };
+        };
+
+        $('#result-div').html(content);
+
+
+        // Toggle Tag Filter Function
+        function toggle_tag(tag_name){
+
+          // Ignore when empty. Patch
+          if (tag_name != ''){
+            var filter = getUrlParam('filter')
+            if (filter == tag_name){
+              $('#result-filter').html('');
+              $('.result-entry').show();
+
+              var new_uri = updateQueryStringParameter('filter', '');
+              history.pushState(null, null, new_uri);
+              // console.log('RESET FILTER')
+            }
+            else {
+              $('#result-filter').html(tag_name);
+              $('.result-entry[data-tag!="' + tag_name + '"]').hide();
+              var new_uri = updateQueryStringParameter('filter', tag_name);
+              history.pushState(null, null, new_uri);
+              // console.log('ACTIVE FILTER')
+            };
+          };
+
+        };
+
+        // Add Badge Click Listener
+        $('.result-tag.badge').on('click', function(e){
+          var tag_name = e.target.innerText;
+          toggle_tag(tag_name)
+        });
+
+        // Restore Stored Filter
+        var tag_name = getUrlParam('filter')
+        if ((tag_name != null)&&(tag_name != '')&&(tag_name != 0)){
+            $('#result-filter').html(tag_name)
+            $('.result-entry[data-tag!="' + tag_name + '"]').hide();
+            $('.result-entry[data-tag*="' + tag_name + '"]').show();
+        };
+
+        // TRACK SEARCH RESULTS CLICK THROUGH - DISABLE
+        // $('.result-entry').find('a').on('click', function(e){
+        // var title = e.target.innerText;
+        // track_url = '/2015/tracksearch?query=' + pattern + '&clicked='+ title
+        // $.get( track_url, function( data ) {
+        //       console.log('TRACKING CLICK THROUGH')
+        //       console.log(data)
+        //     });
+        // });
+        // TRACK SEARCH RESULTS
+
+    };
+    // End Build Results
+
+
+    // PAGE LOADING FUNCS
+
+    // Manually Hide unwanted elements
+    var target_top = 80
+    var position = $("div#header").position()
+    if (position != undefined){
+        var delta = position.top - target_top
+        $("div#header").css("margin-top", - delta);
+        // console.log('Delta:' + delta)
+    }
+
+    var headerText = $('#mainBody>div.summary')
+    if (headerText.text().length < 2) {
+    //   console.log('No header text. Hiding...')
+      headerText.hide()
+    }
+
+    // Show Content
+    // $('#main-sidebar').animate({opacity: 1},300);
+    $('#main-sidebar').css({opacity: 1});
+
+
+    $("#sidebar-search>form").submit(function(e) {
+        e.preventDefault() // Keeps page from submitting and reloading
+        var pattern = $('#input-search').val();
+        sessionStorage.removeItem('result_scroll');
+        sessionStorage.removeItem('tag_name');
+        $('#result-filter').html('')
+
+        var clean_uri = updateQueryStringParameter('filter', '');
+        history.pushState(null, null, clean_uri);
+
+        search(pattern, null, true)
+    });
+
+
+    // Sidebar Search
+    $("#sidebar").scroll(function(){
+      if ($("#sidebar").scrollTop() > 1){
+          $("#sidebar-search").css("top", $("#sidebar").scrollTop() + 0 + "px");
+          $("#sidebar-search").addClass("bottom-shadow")
+          $("#sidebar-search").removeClass("no-bottom-shadow")
+
+      } else {
+          $("#sidebar-search").css("top", "0px");
+          $("#sidebar-search").addClass("no-bottom-shadow")
+          $("#sidebar-search").removeClass("bottom-shadow")
+      }
+    });
+
+    // Store Scroll
+    $(".modal").scroll(function(){
+      var result_scroll = $(".modal").scrollTop()
+      sessionStorage.setItem('result_scroll', result_scroll);
+    });
+
+    $('.modal').on('hidden.bs.modal', function (event) {
+        $('#searchModal').modal('hide');
+        $('#result-size').html('')
+        event.stopPropagation();
+        history.pushState(null, null, '/{{year}}/');
+        // history.replaceState(null, null, '/{{year}}/');
+    });
+
+    // Build Model and Results From URL
+    function check_modal_url(){
+      var pattern = getUrlParam('query')
+      var filter = getUrlParam('filter')
+      var modalOpen = window.location.href.indexOf('#searchModal') != -1
+      if(modalOpen) {
+        $('#searchModal').modal('show');
+        search(pattern, filter, false)
+      }
+      else {
+        $('#searchModal').modal('hide');
+      }
+    };
+    // Check Url on loading - When coming back from another page
+    check_modal_url()
+
+    // Check Url from when using back button but staying on the same page
+    window.addEventListener('popstate', function(event) {
+      check_modal_url()
+    });
+
+    // Restore Scroll
+    $('.modal').on('shown.bs.modal', function () {
+      if(sessionStorage && sessionStorage.getItem('result_scroll')){
+          var result_scroll = sessionStorage.getItem('result_scroll');
+          $('.modal').scrollTop(result_scroll);
+          console.log('Scroll Restored')
+      };
+    });
+
+    // Sidebar Search Search
+    $(".modal-body").scroll(function(){
+      if ($(this).scrollTop() > 1){
+          $(this).addClass("bottom-shadow")
+          $(this).removeClass("no-bottom-shadow")
+
+      } else {
+          $(this).addClass("no-bottom-shadow")
+          $(this).removeClass("bottom-shadow")
+      }
+    });
+
+}); //END OF DOC READY
+
+<!-- END API SCRIPT  -->
+</script>
+
+{% endblock %}

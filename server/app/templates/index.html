@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <title>Sandwich</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="../static/css/sandwich.css">
+
+    <link href='favicon.ico?v=2' rel='icon' type='image/x-icon'/>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div id="header">
+            <img src="../static/img/SANDWICH LOGO.png" alt="Smiley face">
+        </div>
+
+        <div id="search" class="container">
+            <form>
+                <div class="form-group">
+                    <!-- <label class="control-label">Search</label> -->
+                    <div class="input-group input-group-sm">
+
+                        <div class="row">
+                           <label>File Select</label>
+                           <select class="browser-default" id="filepath_dropdown">
+                             <!-- <option value="" disabled selected>Choose a category</option> -->
+                             {% for f in filepaths %}
+                                 <option value="{{ f }}">{{ f }}</option>
+                             {% endfor %}
+                          </select>
+                        </div>
+                        <div class="row">
+                            <label>Category Select</label>
+                            <select class="browser-default" id="category_dropdown">
+                             <!-- <option value="" disabled selected>Choose a category</option> -->
+                              {% for c in categories %}
+                                <option value="{{ c }}">{{ c }}</option>
+                              {% endfor %}
+
+                            </select>
+                        </div>
+                        <div class="row">
+                             <p>
+                                <input name="group1" type="radio" id="isnottype" checked="1"/>
+                                <label for="isnottype">Instances</label>
+                            </p>
+                           <p>
+                            <input name="group1" type="radio" type="checkbox" id="istype" />
+                            <label for="istype">Types</label>
+                          </p>
+                        </div>
+
+                        <div class="row">
+                            <button class="waves-effect waves-light btn col s12" id="btn-search" type="submit" data-toggle="modal" data-target="#searchModal">Make Me a Sandwich!</button>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+
+        <div class="progress" id="loading_bar" style="display: none;">
+            <div class="indeterminate"></div>
+        </div>
+
+      <div id="response-table">
+        </hr>
+        <table id="my-final-table" class="responsive-table centered highlight">
+            <thead id="table-headers">
+                <!-- <th>Band</th>
+                <th>Song</th> -->
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+      </div>
+
+      <div id="done-jobs">
+          </hr>
+          <h5> Completed Orders</h5>
+          <div class="collection">
+          {% for job in done_job_ids %}
+            <a href="/job/{{job.job_id}}" class="collection-item" target="_blank">{{job.job_id}} : <b> {{job.filters.category}} </b> : <i> {{job.status}} </i> </a>
+          {% endfor %}
+        </div>
+      </div>
+
+    <!-- <img id="sandwich" src="{{url_for('static', filename='sandwich.jpg')}}"/> -->
+      </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="../static/js/sandwich.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.dynatable.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https:////cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    </body>
+
+    </html>

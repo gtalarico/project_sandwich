@@ -1,0 +1,69 @@
+{
+  "filters": {
+    "category": "OST_Rooms", 
+    "istype": 0, 
+    "isnottype": 1
+  }, 
+  "filepath": "C:\\Users\\gtalarico\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\File1.rvt", 
+  "job_id": "14813878634054854", 
+  "status": "done", 
+  "action": "get", 
+  "response": [
+    {
+      "id": 2388, 
+      "class": "Room", 
+      "name": "Albert", 
+      "number": "1", 
+      "area": "271.11 SF", 
+      "level": "Level 1"
+    }, 
+    {
+      "id": 2390, 
+      "class": "Room", 
+      "number": "2", 
+      "name": "Room", 
+      "area": "576.11 SF", 
+      "level": "Level 1"
+    }, 
+    {
+      "id": 3544, 
+      "class": "Room", 
+      "name": "Jimmy Johns", 
+      "number": "3", 
+      "area": "216.94 SF", 
+      "level": "Level 1"
+    }, 
+    {
+      "id": 3546, 
+      "class": "Room", 
+      "name": "Five Guys", 
+      "number": "4", 
+      "area": "143.61 SF", 
+      "level": "Level 1"
+    }, 
+    {
+      "id": 3548, 
+      "class": "Room", 
+      "number": "5", 
+      "name": "More Rooms", 
+      "area": "135.78 SF", 
+      "level": "Level 1"
+    }, 
+    {
+      "id": 3550, 
+      "class": "Room", 
+      "name": "Room", 
+      "number": "6", 
+      "area": "205.11 SF", 
+      "level": "Level 1"
+    }, 
+    {
+      "id": 3552, 
+      "class": "Room", 
+      "number": "7", 
+      "name": "SomeRoom", 
+      "area": "271.11 SF", 
+      "level": "Level 1"
+    }
+  ]
+}

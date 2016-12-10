@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <title>Sandwich</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="../static/css/sandwich.css">
+
+
+    <link href='/favicon.ico?v=2' rel='icon' type='image/x-icon'/>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="header">
+            <h4><a href="/">Project Sandwich</a></h4>
+            <h5>Sandwich Id: {{job_id}}</h5>
+        </div>
+
+        <div class="progress" id="loading_bar" style="display: none;">
+            <div class="indeterminate"></div>
+        </div>
+
+      <div id="response-table">
+        </hr>
+        <table id="my-final-table" class="responsive-table centered highlight">
+            <thead id="table-headers">
+                <!-- <th>Band</th>
+                <th>Song</th> -->
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+      </div>
+
+      <!-- <div id="done-jobs">
+          </hr>
+          <h5> Completed Jobs</h5>
+          <ul>
+          {% for job in done_job_ids %}
+          <li><a href="/job/{{job.job_id}}">{{job.job_id}}</a>: {{job.filters.category}}</li>
+          {% endfor %}
+          </ul>
+      </div> -->
+      <div id="done-jobs">
+          </hr>
+          <h5> Completed Jobs</h5>
+          <div class="collection">
+          {% for job in done_job_ids %}
+            <a href="/job/{{job.job_id}}" class="collection-item" target="_blank">{{job.job_id}} : {{job.filters.category}}</a>
+          {% endfor %}
+        </div>
+      </div>
+
+      </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="../static/js/sandwich.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.dynatable.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"> </script>
+
+    <script>
+    var job = JSON.parse({{job|tojson}})
+    console.log(job)
+    makeGraph(job['response']);
+    $(document).ready(materializeGraph())
+    </script>
+    </body>
+
+    </html>

@@ -1,0 +1,41 @@
+{
+  "filters": {
+    "isnottype": 1, 
+    "istype": 0, 
+    "category": "OST_Levels"
+  }, 
+  "filepath": "C:\\Users\\gtalarico\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\File1.rvt", 
+  "job_id": "14813917543899438", 
+  "status": "done", 
+  "action": "get", 
+  "response": [
+    {
+      "id": 1492, 
+      "class": "Level", 
+      "family": "Level", 
+      "name": "Level 1", 
+      "elevation": "0' - 0\""
+    }, 
+    {
+      "id": 3945, 
+      "class": "Level", 
+      "family": "Level", 
+      "name": "Level 2", 
+      "elevation": "20' - 0\""
+    }, 
+    {
+      "id": 4026, 
+      "class": "Level", 
+      "family": "Level", 
+      "name": "Level 3", 
+      "elevation": "36' - 0\""
+    }, 
+    {
+      "id": 4037, 
+      "class": "Level", 
+      "family": "Level", 
+      "name": "Level 4", 
+      "elevation": "47' - 0\""
+    }
+  ]
+}
