@@ -1,18 +1,18 @@
 {
   "filters": {
     "isnottype": 1, 
-    "category": "OST_Views", 
-    "istype": 0
+    "istype": 0, 
+    "category": "OST_Views"
   }, 
   "filepath": "C:\\Users\\gtalarico\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\File1.rvt", 
-  "job_id": "14813897001150577", 
+  "job_id": "14813926257390206", 
   "status": "done", 
   "action": "get", 
   "response": [
     {
       "id": 1493, 
       "class": "ViewPlan", 
-      "family": "Structural Plan"
+      "family": "Structural Plans"
     }, 
     {
       "id": 1503, 
@@ -27,22 +27,22 @@
     {
       "id": 3777, 
       "class": "ViewSection", 
-      "family": "Elevation"
+      "family": "Elevations"
     }, 
     {
       "id": 3947, 
       "class": "ViewPlan", 
-      "family": "Floor Plan"
+      "family": "Floor Plans"
     }, 
     {
       "id": 3957, 
       "class": "ViewPlan", 
-      "family": "Ceiling Plan"
+      "family": "Ceiling Plans"
     }, 
     {
       "id": 3966, 
       "class": "ViewPlan", 
-      "family": "Structural Plans"
+      "family": "Structural Plan"
     }
   ]
 }

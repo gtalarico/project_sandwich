@@ -12,6 +12,7 @@ var stuffs = [{
 
 
 function makeGraph(d) {
+  $("#table-headers").empty();
     makeHeaders(d);
     makeRows(d);
     // materializeGraph();
@@ -20,16 +21,6 @@ function makeGraph(d) {
 function makeHeaders(d) {
     if ($("#table-headers").children().length == 0) {
 
-        for (key in d[0]) {
-            console.log(key);
-            $("#table-headers").append($('<th />', {
-                text: key.split(' ').join('-')
-            }))
-        }
-    }
-
-    if ($("#table-headers").children().length < 0) {
-        $("#table-headers").empty();
         for (key in d[0]) {
             console.log(key);
             $("#table-headers").append($('<th />', {
@@ -104,7 +95,7 @@ function checkStatus(job_id) {
                 clearInterval(timer);
                 toggle_visibility();
                 $("#done-jobs .collection :first-child i").text("Done");
-
+$("#done-jobs .collection :first-child").removeClass("active");
 
 
             } else if (results_json["status"] === "pending") {
@@ -135,7 +126,7 @@ $("#search>form").submit(function(e) {
         .done(function() {
             console.log("Search Finished");
             // Search successful
-            $("#done-jobs .collection").prepend( '<a href="#" class="collection-item" target="_blank"' + '>' +
+            $("#done-jobs .collection").prepend( '<a href="#" class="collection-item active" target="_blank"' + '>' +
                                                 results_json['job_id'] + ':' + "<b>" + results_json['filters']['category'] + "</b>" +
                                                 ': <i> Processing </i> </a>'
 

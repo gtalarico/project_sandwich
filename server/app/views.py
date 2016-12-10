@@ -69,6 +69,7 @@ def get_job(job_id):
         job_data = json.load(fp)
     return job_data
 
+
 @app.route('/job/<string:job_id>', methods=['GET'])
 def render_job(job_id):
     job_data = get_job(job_id)
@@ -82,7 +83,7 @@ def render_job(job_id):
 def get_done_jobs():
     job_path = os.path.join(JOB_DONE_FOLDER)
     jobs = []
-    for job_id in os.listdir(job_path):
+    for job_id in reversed(os.listdir(job_path)):
         job_filepath = os.path.join(JOB_DONE_FOLDER, job_id)
         with open(job_filepath) as fp:
             job = json.load(fp)

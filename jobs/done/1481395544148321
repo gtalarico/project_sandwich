@@ -1,11 +1,11 @@
 {
   "filters": {
-    "category": "OST_Levels", 
+    "isnottype": 1, 
     "istype": 0, 
-    "isnottype": 1
+    "category": "OST_Levels"
   }, 
-  "filepath": "C:\\Users\\gtalarico\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\File1.rvt", 
-  "job_id": "14813887335132575", 
+  "filepath": "C:\\Users\\gtalarico\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\File1-Copy.rvt", 
+  "job_id": "1481395544148321", 
   "status": "done", 
   "action": "get", 
   "response": [

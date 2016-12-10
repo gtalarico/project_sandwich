@@ -1,11 +1,11 @@
 {
   "filters": {
-    "category": "OST_Rooms", 
+    "isnottype": 1, 
     "istype": 0, 
-    "isnottype": 1
+    "category": "OST_Rooms"
   }, 
   "filepath": "C:\\Users\\gtalarico\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\File1.rvt", 
-  "job_id": "14813878634054854", 
+  "job_id": "14813925661891403", 
   "status": "done", 
   "action": "get", 
   "response": [
@@ -36,8 +36,8 @@
     {
       "id": 3546, 
       "class": "Room", 
-      "name": "Five Guys", 
       "number": "4", 
+      "name": "Five Guys", 
       "area": "143.61 SF", 
       "level": "Level 1"
     }, 
@@ -60,8 +60,8 @@
     {
       "id": 3552, 
       "class": "Room", 
-      "number": "7", 
       "name": "SomeRoom", 
+      "number": "7", 
       "area": "271.11 SF", 
       "level": "Level 1"
     }
