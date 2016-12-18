@@ -24,13 +24,20 @@ namespace Sandwich
     class app : IExternalApplication
     {
 
+        // Globals
         static app _thisApp;
         private UIApplication _uiapp;
 
         //static string sandwichRunner = "CustomCtrl_%CustomCtrl_%Sandwich%Sandwich%SandwichSettings";
         static string sandwichRunnerCommandId = "CustomCtrl_%CustomCtrl_%Sandwich%Sandwich%SandwichRun";
-        
+
+        // Watcher
         Watcher _watcher = new Watcher(@"D:\Dropbox\Shared\dev\repos\project_sandwich\jobs\pending");
+
+        // External Events
+        ExternalEvent _exEvent;
+        EventRegisterHandler _exeventHander;
+
 
         public Result OnStartup(UIControlledApplication uiControlledApp)
         {
@@ -92,7 +99,12 @@ namespace Sandwich
 
             #endregion // Retrieving UIApplication from UIControlledApplication
             uiControlledApp.ControlledApplication.ApplicationInitialized += OnApplicationInitialized;
+            uiControlledApp.ControlledApplication.DocumentOpened += OnDocumentOpened;
             uiControlledApp.Idling += OnIdling;
+
+            // External Event
+            ExternalEvent _exEvent;
+            EventRegisterHandler _exeventHander = new EventRegisterHandler();
 
             return Result.Succeeded;
         }
@@ -102,48 +114,64 @@ namespace Sandwich
            // Sender is an Application instance:
             Application app = sender as Application;
             _uiapp = new UIApplication(app);
-
             //TaskDialog.Show("Sandwich", "Sandwich Loaded");
             _watcher.watch();
+            
+            string placeHolder = @"D:\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\placeholder.rvt";
+            _uiapp.OpenAndActivateDocument(placeHolder);
+            LoadFile(_uiapp, placeHolder);
 
-            //string testPath = @"D:\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\File1.rvt";
-            //uiapp.OpenAndActivateDocument(path);
-            //LoadFile(path);
-
-            // Get the command id for the import command - Got it from Journal File
-            // RevitCommandId commandId = RevitCommandId.LookupCommandId("CustomCtrl_%CustomCtrl_%Add-Ins%RevitPythonShell%runner");
-            //_uiapp.PostCommand(commandId);
+        // Get the command id for the import command - Got it from Journal File
+        // RevitCommandId commandId = RevitCommandId.LookupCommandId("CustomCtrl_%CustomCtrl_%Add-Ins%RevitPythonShell%runner");
+        //_uiapp.PostCommand(commandId);
         }
 
-        void OnIdling (object sender, IdlingEventArgs e)
+        void OnDocumentOpened(object sender, DocumentOpenedEventArgs e)
         {
+
+        }
+
+            void OnIdling (object sender, IdlingEventArgs e)
+        {
+
+            //Sets the next invocation of the idling event to be called promptly
+            e.SetRaiseWithoutDelay();
+
             //Application app = sender as Application;
             
             while (_watcher.jobQueue.Count > 0)
             {
                 Job job = _watcher.jobQueue.Dequeue();
                 string job_filepath = Path.Combine(_watcher.pendingJobFolder, job.job_id);
-                //LoadFile(job.filepath);
+                UIDocument uidoc = LoadFile(_uiapp, job.filepath);
 
-                UIDocument uidoc = LoadFile(job.filepath);
                 if (uidoc != null)
                 {
-                    //active_doc = _uiapp.ActiveUIDocument.Document;
                     string done_job_filepath = Path.Combine(@"D:\Dropbox\Shared\dev\repos\project_sandwich\jobs", job.job_id);
                     File.Move(job_filepath, done_job_filepath);
-                    try
-                    {
-                        RevitCommandId sandwichRunnerCommand = RevitCommandId.LookupCommandId(sandwichRunnerCommandId);
-                        _uiapp.PostCommand(sandwichRunnerCommand);
-                    }
-                    catch (Exception error)
-                    {
-                        TaskDialog.Show("Weird Error", String.Format("Error Posting Command: {0}", error.Message));
-                    }
-                    // TODO: Close Document
+
+                    //try
+                    //{
+                    //    //RevitCommandId sandwichRunnerCommand = RevitCommandId.LookupCommandId(sandwichRunnerCommandId);
+                    //    //_uiapp.PostCommand(sandwichRunnerCommand);
+
+                    //}
+                    //catch (Exception error)
+                    //{
+                    //    TaskDialog.Show("Weird Error", String.Format("Error Posting Command: {0}", error.Message));
+                    //}
+
+                    EventRegisterHandler _exeventHander = new EventRegisterHandler();
+                    _exeventHander.path = job.filepath;
+                    _exEvent = ExternalEvent.Create(_exeventHander);
+                    _exEvent.Raise();
+
+
+                    // TODO: Close Document - Cannot close from within event...?
                     //string placeHolderModel = @"D:\Dropbox\Shared\dev\repos\project_sandwich\revit\placeholder.rvt";
                     //UIDocument placeHolderDoc = LoadFile(placeHolderModel);
                     //uidoc.Document.Close();
+                    //System.Windows.Forms.SendKeys.SendWait("^{F4}");
 
                 }            
             }
@@ -157,12 +185,17 @@ namespace Sandwich
             //}
         }
 
-        public UIDocument LoadFile(string filePath)
+        public Result OnShutdown(UIControlledApplication a)
+        {
+            return Result.Succeeded;
+        }
+
+        public static UIDocument LoadFile(UIApplication uiapp, string filePath)
         {
             UIDocument uidoc = null;
             try
             {
-                uidoc = _uiapp.OpenAndActivateDocument(filePath);
+                uidoc = uiapp.OpenAndActivateDocument(filePath);
                 return uidoc;
             }
             catch (Exception error)
@@ -171,13 +204,7 @@ namespace Sandwich
                 TaskDialog.Show("Weird Error", String.Format("Error Opening File: {0} \n\r {1}", error.Message, filePath));
                 return uidoc;
             }
-
         }
 
-
-        public Result OnShutdown(UIControlledApplication a)
-        {
-            return Result.Succeeded;
-        }
     }
 }
