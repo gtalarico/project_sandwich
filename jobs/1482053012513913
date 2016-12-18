@@ -1,0 +1,11 @@
+{
+  "job_id": "1482053012513913",
+  "filepath": "D:\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\File1.0001.rvt",
+  "action": "get",
+  "status": "pending",
+  "filters": {
+    "istype": 0,
+    "isnottype": 1,
+    "category": "OST_Floors"
+  }
+}

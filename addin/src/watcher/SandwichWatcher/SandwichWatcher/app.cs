@@ -118,7 +118,7 @@ namespace Sandwich
             _watcher.watch();
             
             string placeHolder = @"D:\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\placeholder.rvt";
-            _uiapp.OpenAndActivateDocument(placeHolder);
+            //_uiapp.OpenAndActivateDocument(placeHolder);
             LoadFile(_uiapp, placeHolder);
 
         // Get the command id for the import command - Got it from Journal File
@@ -143,37 +143,33 @@ namespace Sandwich
             {
                 Job job = _watcher.jobQueue.Dequeue();
                 string job_filepath = Path.Combine(_watcher.pendingJobFolder, job.job_id);
-                UIDocument uidoc = LoadFile(_uiapp, job.filepath);
+                
+                //string done_job_filepath = Path.Combine(@"D:\Dropbox\Shared\dev\repos\project_sandwich\jobs", job.job_id);
+                //File.Move(job_filepath, done_job_filepath);
 
-                if (uidoc != null)
-                {
-                    string done_job_filepath = Path.Combine(@"D:\Dropbox\Shared\dev\repos\project_sandwich\jobs", job.job_id);
-                    File.Move(job_filepath, done_job_filepath);
+                //try
+                //{
+                //    //RevitCommandId sandwichRunnerCommand = RevitCommandId.LookupCommandId(sandwichRunnerCommandId);
+                //    //_uiapp.PostCommand(sandwichRunnerCommand);
 
-                    //try
-                    //{
-                    //    //RevitCommandId sandwichRunnerCommand = RevitCommandId.LookupCommandId(sandwichRunnerCommandId);
-                    //    //_uiapp.PostCommand(sandwichRunnerCommand);
+                //}
+                //catch (Exception error)
+                //{
+                //    TaskDialog.Show("Weird Error", String.Format("Error Posting Command: {0}", error.Message));
+                //}
 
-                    //}
-                    //catch (Exception error)
-                    //{
-                    //    TaskDialog.Show("Weird Error", String.Format("Error Posting Command: {0}", error.Message));
-                    //}
-
-                    EventRegisterHandler _exeventHander = new EventRegisterHandler();
-                    _exeventHander.path = job.filepath;
-                    _exEvent = ExternalEvent.Create(_exeventHander);
-                    _exEvent.Raise();
+                EventRegisterHandler _exeventHander = new EventRegisterHandler();
+                _exeventHander.path = job.filepath;
+                _exEvent = ExternalEvent.Create(_exeventHander);
+                _exEvent.Raise();
 
 
-                    // TODO: Close Document - Cannot close from within event...?
-                    //string placeHolderModel = @"D:\Dropbox\Shared\dev\repos\project_sandwich\revit\placeholder.rvt";
-                    //UIDocument placeHolderDoc = LoadFile(placeHolderModel);
-                    //uidoc.Document.Close();
-                    //System.Windows.Forms.SendKeys.SendWait("^{F4}");
-
-                }            
+                // TODO: Close Document - Cannot close from within event...?
+                //string placeHolderModel = @"D:\Dropbox\Shared\dev\repos\project_sandwich\revit\placeholder.rvt";
+                //UIDocument placeHolderDoc = LoadFile(placeHolderModel);
+                //uidoc.Document.Close();
+                //System.Windows.Forms.SendKeys.SendWait("^{F4}");
+            
             }
 
             //if (app != null)
