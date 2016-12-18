@@ -1,0 +1,8 @@
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\bin\Release\Sandwich.dll
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\bin\Release\Sandwich.pdb
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\bin\Release\NewtonSoft.Json.dll
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Release\Sandwich.g.resources
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Release\Sandwich.Properties.Resources.resources
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Release\Sandwich.csproj.GenerateResource.Cache
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Release\Sandwich.dll
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Release\Sandwich.pdb

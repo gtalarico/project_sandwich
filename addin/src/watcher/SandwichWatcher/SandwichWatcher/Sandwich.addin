@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>SandwichRunner</Text>
+    <Description>Run Sandwich Jobs</Description>
+    <Assembly>Sandwich\Sandwich.dll</Assembly>
+    <FullClassName>Sandwich.RunJob</FullClassName>
+    <ClientId>65502349-1099-4CC8-80F4-DA41E039A973</ClientId>
+    <VendorId>SANDWICH</VendorId>
+    <VendorDescription>Sandwich Inc</VendorDescription>
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Text>SandwichSettings</Text>
+    <Description>Sandwich Settings.</Description>
+    <Assembly>Sandwich\Sandwich.dll</Assembly>
+    <FullClassName>Sandwich.Settings</FullClassName>
+    <ClientId>400D63FD-E2B7-44D1-A342-1DF929A53458</ClientId>
+    <VendorId>SANDWICH</VendorId>
+    <VendorDescription>Sandwich Inc</VendorDescription>
+  </AddIn>
+  
+  <AddIn Type="Application">
+    <Name>Application Sandwich Watcher</Name>
+    <Assembly>Sandwich\Sandwich.dll</Assembly>
+    <FullClassName>Sandwich.app</FullClassName>
+    <ClientId>
+      57C35E97-1530-4473-A312-6850B5079D34
+    </ClientId>
+    <VendorId>SANDWICH</VendorId>
+    <VendorDescription>Sandwich Inc</VendorDescription>
+  </AddIn>
+</RevitAddIns>

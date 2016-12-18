@@ -1,0 +1,616 @@
+{
+  "filters": {
+    "isnottype": 1, 
+    "istype": 0, 
+    "category": "OST_Walls"
+  }, 
+  "filepath": "C:\\Users\\gtalarico\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\PvmEc.rvt", 
+  "job_id": "14813965533839042", 
+  "status": "done", 
+  "action": "get", 
+  "response": [
+    {
+      "id": 141120, 
+      "class": "Wall", 
+      "area": "330.92 SF", 
+      "length": "17' - 5\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141121, 
+      "class": "Wall", 
+      "area": "330.92 SF", 
+      "length": "17' - 5\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141122, 
+      "class": "Wall", 
+      "area": "330.92 SF", 
+      "length": "17' - 5\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141124, 
+      "class": "Wall", 
+      "area": "330.92 SF", 
+      "length": "17' - 5\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141126, 
+      "class": "Wall", 
+      "area": "330.92 SF", 
+      "length": "17' - 5\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141129, 
+      "class": "Wall", 
+      "area": "51.78 SF", 
+      "length": "2' - 8 11/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141130, 
+      "class": "Wall", 
+      "area": "51.49 SF", 
+      "length": "2' - 8 17/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141131, 
+      "class": "Wall", 
+      "area": "51.43 SF", 
+      "length": "2' - 8 15/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141132, 
+      "class": "Wall", 
+      "area": "51.43 SF", 
+      "length": "2' - 8 15/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141133, 
+      "class": "Wall", 
+      "area": "51.49 SF", 
+      "length": "2' - 8 17/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141134, 
+      "class": "Wall", 
+      "area": "51.43 SF", 
+      "length": "2' - 8 15/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141135, 
+      "class": "Wall", 
+      "area": "51.49 SF", 
+      "length": "2' - 8 17/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141136, 
+      "class": "Wall", 
+      "area": "51.43 SF", 
+      "length": "2' - 8 15/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141139, 
+      "class": "Wall", 
+      "area": "536.09 SF", 
+      "length": "27' - 6 11/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141140, 
+      "class": "Wall", 
+      "area": "532.47 SF", 
+      "length": "27' - 6 5/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141148, 
+      "class": "Wall", 
+      "area": "70.79 SF", 
+      "length": "3' - 1 23/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141149, 
+      "class": "Wall", 
+      "area": "138.57 SF", 
+      "length": "6' - 11\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141150, 
+      "class": "Wall", 
+      "area": "125.67 SF", 
+      "length": "8' - 6 5/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141151, 
+      "class": "Wall", 
+      "area": "338.22 SF", 
+      "length": "20' - 0 7/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141152, 
+      "class": "Wall", 
+      "area": "154.31 SF", 
+      "length": "8' - 11 11/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141153, 
+      "class": "Wall", 
+      "area": "242.25 SF", 
+      "length": "13' - 4\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141154, 
+      "class": "Wall", 
+      "area": "631.19 SF", 
+      "length": "36' - 1 29/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141155, 
+      "class": "Wall", 
+      "area": "161.50 SF", 
+      "length": "8' - 5\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141156, 
+      "class": "Wall", 
+      "area": "92.09 SF", 
+      "length": "5' - 6 5/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141157, 
+      "class": "Wall", 
+      "area": "20.71 SF", 
+      "length": "0' - 5 3/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141158, 
+      "class": "Wall", 
+      "area": "272.33 SF", 
+      "length": "15' - 0\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141159, 
+      "class": "Wall", 
+      "area": "25.33 SF", 
+      "length": "0' - 8\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141160, 
+      "class": "Wall", 
+      "area": "91.69 SF", 
+      "length": "5' - 8 21/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141161, 
+      "class": "Wall", 
+      "area": "207.97 SF", 
+      "length": "11' - 1 21/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141162, 
+      "class": "Wall", 
+      "area": "207.58 SF", 
+      "length": "11' - 1 13/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141163, 
+      "class": "Wall", 
+      "area": "76.10 SF", 
+      "length": "4' - 11 29/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141164, 
+      "class": "Wall", 
+      "area": "22.39 SF", 
+      "length": "1' - 1 13/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141165, 
+      "class": "Wall", 
+      "area": "12.84 SF", 
+      "length": "0' - 10 13/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141166, 
+      "class": "Wall", 
+      "area": "12.84 SF", 
+      "length": "0' - 10 13/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141167, 
+      "class": "Wall", 
+      "area": "232.75 SF", 
+      "length": "12' - 7\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141168, 
+      "class": "Wall", 
+      "area": "20.31 SF", 
+      "length": "1' - 0 13/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141170, 
+      "class": "Wall", 
+      "area": "358.17 SF", 
+      "length": "19' - 2 7/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141171, 
+      "class": "Wall", 
+      "area": "338.60 SF", 
+      "length": "17' - 9 27/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141174, 
+      "class": "Wall", 
+      "area": "26.10 SF", 
+      "length": "0' - 11 29/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141175, 
+      "class": "Wall", 
+      "area": "472.44 SF", 
+      "length": "25' - 3\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141176, 
+      "class": "Wall", 
+      "area": "562.18 SF", 
+      "length": "29' - 7 1/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141177, 
+      "class": "Wall", 
+      "area": "29.67 SF", 
+      "length": "1' - 0 7/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141178, 
+      "class": "Wall", 
+      "area": "22.01 SF", 
+      "length": "1' - 0 7/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141179, 
+      "class": "Wall", 
+      "area": "348.39 SF", 
+      "length": "18' - 4 1/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141180, 
+      "class": "Wall", 
+      "area": "111.39 SF", 
+      "length": "6' - 6 11/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141181, 
+      "class": "Wall", 
+      "area": "85.50 SF", 
+      "length": "4' - 6\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141182, 
+      "class": "Wall", 
+      "area": "366.54 SF", 
+      "length": "19' - 4 1/2\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141183, 
+      "class": "Wall", 
+      "area": "16.23 SF", 
+      "length": "0' - 8 9/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141184, 
+      "class": "Wall", 
+      "area": "358.07 SF", 
+      "length": "19' - 5 15/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141190, 
+      "class": "Wall", 
+      "area": "46.97 SF", 
+      "length": "3' - 10 5/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141200, 
+      "class": "Wall", 
+      "area": "51.94 SF", 
+      "length": "3' - 0 13/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141215, 
+      "class": "Wall", 
+      "area": "799.58 SF", 
+      "length": "42' - 7\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141222, 
+      "class": "Wall", 
+      "area": "124.72 SF", 
+      "length": "9' - 3 1/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141223, 
+      "class": "Wall", 
+      "area": "146.76 SF", 
+      "length": "25' - 4 15/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141226, 
+      "class": "Wall", 
+      "area": "40.75 SF", 
+      "length": "11' - 7 5/8\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141229, 
+      "class": "Wall", 
+      "area": "56.65 SF", 
+      "length": "7' - 3 23/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 141230, 
+      "class": "Wall", 
+      "area": "56.65 SF", 
+      "length": "7' - 3 23/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 180748, 
+      "class": "Wall", 
+      "area": "115.47 SF", 
+      "length": "6' - 3 1/4\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 180931, 
+      "class": "Wall", 
+      "area": "34.65 SF", 
+      "length": "2' - 10 21/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 183054, 
+      "class": "Wall", 
+      "area": "162.68 SF", 
+      "length": "12' - 1 11/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 183172, 
+      "class": "Wall", 
+      "area": "106.82 SF", 
+      "length": "5' - 8 1/4\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 183203, 
+      "class": "Wall", 
+      "area": "98.60 SF", 
+      "length": "5' - 2 9/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 183272, 
+      "class": "Wall", 
+      "area": "209.80 SF", 
+      "length": "11' - 0 1/2\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 183323, 
+      "class": "Wall", 
+      "area": "166.59 SF", 
+      "length": "9' - 0 7/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 183444, 
+      "class": "Wall", 
+      "area": "216.92 SF", 
+      "length": "11' - 2\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 183588, 
+      "class": "Wall", 
+      "area": "96.15 SF", 
+      "length": "5' - 0 23/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 183623, 
+      "class": "Wall", 
+      "area": "45.43 SF", 
+      "length": "2' - 4 11/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 183665, 
+      "class": "Wall", 
+      "area": "266.52 SF", 
+      "length": "14' - 7 11/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 183726, 
+      "class": "Wall", 
+      "area": "362.67 SF", 
+      "length": "19' - 8 1/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 183761, 
+      "class": "Wall", 
+      "area": "168.91 SF", 
+      "length": "9' - 4\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 184192, 
+      "class": "Wall", 
+      "area": "357.06 SF", 
+      "length": "18' - 3 3/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 184217, 
+      "class": "Wall", 
+      "area": "19.14 SF", 
+      "length": "1' - 5 13/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 184429, 
+      "class": "Wall", 
+      "area": "45.40 SF", 
+      "length": "2' - 7 13/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 184454, 
+      "class": "Wall", 
+      "area": "20.94 SF", 
+      "length": "1' - 1 7/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 184533, 
+      "class": "Wall", 
+      "area": "856.96 SF", 
+      "length": "47' - 11 1/8\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 184643, 
+      "class": "Wall", 
+      "area": "220.12 SF", 
+      "length": "12' - 1 11/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 184687, 
+      "class": "Wall", 
+      "area": "40.28 SF", 
+      "length": "2' - 6 1/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 185643, 
+      "class": "Wall", 
+      "number": "4", 
+      "area": "1325.51 SF", 
+      "length": "89' - 4 5/32\"", 
+      "family": "Curtain Wall"
+    }, 
+    {
+      "id": 188307, 
+      "class": "Wall", 
+      "area": "210.96 SF", 
+      "length": "10' - 11 9/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 189551, 
+      "class": "Wall", 
+      "area": "418.12 SF", 
+      "length": "22' - 4 1/16\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 189608, 
+      "class": "Wall", 
+      "area": "513.52 SF", 
+      "length": "27' - 6 11/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 189785, 
+      "class": "Wall", 
+      "area": "238.14 SF", 
+      "length": "12' - 6 13/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 189861, 
+      "class": "Wall", 
+      "area": "361.24 SF", 
+      "length": "19' - 5 15/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 190862, 
+      "class": "Wall", 
+      "area": "304.55 SF", 
+      "length": "16' - 6 11/32\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 206837, 
+      "class": "Wall", 
+      "area": "783.00 SF", 
+      "length": "130' - 6\"", 
+      "family": "Basic Wall"
+    }, 
+    {
+      "id": 213376, 
+      "class": "Wall", 
+      "area": "271.94 SF", 
+      "length": "14' - 6\"", 
+      "family": "Basic Wall"
+    }
+  ]
+}

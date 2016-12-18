@@ -1,0 +1,408 @@
+{
+  "filters": {
+    "isnottype": 1, 
+    "istype": 0, 
+    "category": "OST_Views"
+  }, 
+  "filepath": "C:\\Users\\gtalarico\\Dropbox\\Shared\\dev\\repos\\project_sandwich\\revit\\Pvm.rvt", 
+  "job_id": "14813966488869026", 
+  "status": "done", 
+  "action": "get", 
+  "response": [
+    {
+      "id": 2566, 
+      "class": "ViewPlan", 
+      "family": "Floor Plan"
+    }, 
+    {
+      "id": 154560, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 154572, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 154574, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 154576, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 154783, 
+      "class": "ViewSection", 
+      "family": "Elevation"
+    }, 
+    {
+      "id": 156673, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 177725, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 190375, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 245760, 
+      "class": "View3D", 
+      "family": ""
+    }, 
+    {
+      "id": 245762, 
+      "class": "ViewSection", 
+      "family": ""
+    }, 
+    {
+      "id": 265871, 
+      "class": "View", 
+      "family": "Legend"
+    }, 
+    {
+      "id": 1765448, 
+      "class": "View", 
+      "family": "Legend"
+    }, 
+    {
+      "id": 2326995, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 2411487, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 2768456, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 3295035, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 3713903, 
+      "class": "View3D", 
+      "family": ""
+    }, 
+    {
+      "id": 5505637, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 5505639, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 5519234, 
+      "class": "ViewPlan", 
+      "family": "Floor Plan"
+    }, 
+    {
+      "id": 5519442, 
+      "class": "ViewPlan", 
+      "family": "Area Plans"
+    }, 
+    {
+      "id": 5519458, 
+      "class": "ViewPlan", 
+      "family": "Floor Plan"
+    }, 
+    {
+      "id": 5519474, 
+      "class": "ViewPlan", 
+      "family": "Floor Plans"
+    }, 
+    {
+      "id": 5519490, 
+      "class": "ViewPlan", 
+      "family": "Floor Plan"
+    }, 
+    {
+      "id": 5519506, 
+      "class": "ViewPlan", 
+      "family": "Floor Plans"
+    }, 
+    {
+      "id": 5519522, 
+      "class": "ViewPlan", 
+      "family": "Floor Plans"
+    }, 
+    {
+      "id": 5519538, 
+      "class": "ViewPlan", 
+      "family": "Ceiling Plan"
+    }, 
+    {
+      "id": 5519553, 
+      "class": "ViewPlan", 
+      "family": "Ceiling Plan"
+    }, 
+    {
+      "id": 5519563, 
+      "class": "ViewPlan", 
+      "family": "Floor Plan"
+    }, 
+    {
+      "id": 5663613, 
+      "class": "View3D", 
+      "family": "3D Views"
+    }, 
+    {
+      "id": 5666158, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5668063, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5690640, 
+      "class": "View3D", 
+      "family": "3D Views"
+    }, 
+    {
+      "id": 5691206, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5691213, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5691899, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5694080, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5696746, 
+      "class": "View3D", 
+      "family": "3D Views"
+    }, 
+    {
+      "id": 5698733, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5708436, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5710402, 
+      "class": "View3D", 
+      "family": "3D Views"
+    }, 
+    {
+      "id": 5711810, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5716923, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5721627, 
+      "class": "ViewSection", 
+      "family": "Elevation"
+    }, 
+    {
+      "id": 5823807, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5830806, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5830818, 
+      "class": "ViewPlan", 
+      "family": "Floor Plan"
+    }, 
+    {
+      "id": 5871221, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5885889, 
+      "class": "ViewSection", 
+      "family": "Section"
+    }, 
+    {
+      "id": 5885898, 
+      "class": "ViewSection", 
+      "family": "Section"
+    }, 
+    {
+      "id": 5885907, 
+      "class": "ViewSection", 
+      "family": "Section"
+    }, 
+    {
+      "id": 5885916, 
+      "class": "ViewSection", 
+      "family": "Sections"
+    }, 
+    {
+      "id": 5885925, 
+      "class": "ViewSection", 
+      "family": "Section"
+    }, 
+    {
+      "id": 5885934, 
+      "class": "ViewSection", 
+      "family": "Section"
+    }, 
+    {
+      "id": 5885943, 
+      "class": "ViewSection", 
+      "family": "Sections"
+    }, 
+    {
+      "id": 5885952, 
+      "class": "ViewSection", 
+      "family": "Section"
+    }, 
+    {
+      "id": 5885961, 
+      "class": "ViewSection", 
+      "family": "Section"
+    }, 
+    {
+      "id": 5885969, 
+      "class": "ViewSection", 
+      "family": ""
+    }, 
+    {
+      "id": 5885981, 
+      "class": "ViewPlan", 
+      "family": "Ceiling Plan"
+    }, 
+    {
+      "id": 5886000, 
+      "class": "ViewPlan", 
+      "family": "Ceiling Plans"
+    }, 
+    {
+      "id": 5886014, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5886024, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5886045, 
+      "class": "ViewPlan", 
+      "family": "Floor Plans"
+    }, 
+    {
+      "id": 5888097, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5888115, 
+      "class": "View3D", 
+      "family": "3D View"
+    }, 
+    {
+      "id": 5890779, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 5890781, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 5890783, 
+      "class": "ViewSection", 
+      "family": ""
+    }, 
+    {
+      "id": 5890785, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 5890787, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 5890789, 
+      "class": "View3D", 
+      "family": ""
+    }, 
+    {
+      "id": 5890791, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 5890793, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 5890795, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 5890797, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 5890799, 
+      "class": "ViewPlan", 
+      "family": ""
+    }, 
+    {
+      "id": 5890829, 
+      "class": "ViewSection", 
+      "family": ""
+    }, 
+    {
+      "id": 5890877, 
+      "class": "ViewPlan", 
+      "family": "Floor Plan"
+    }
+  ]
+}

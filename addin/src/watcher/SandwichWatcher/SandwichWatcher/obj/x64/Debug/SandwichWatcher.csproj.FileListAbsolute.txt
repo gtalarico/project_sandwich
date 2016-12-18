@@ -1,0 +1,4 @@
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\bin\x64\Debug\SandwichWatcher.dll
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\bin\x64\Debug\SandwichWatcher.pdb
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\x64\Debug\SandwichWatcher.dll
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\x64\Debug\SandwichWatcher.pdb
