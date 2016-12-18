@@ -27,3 +27,10 @@ C:\Users\gtalarico\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\S
 C:\Users\gtalarico\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Debug\SandwichWatcher.dll
 C:\Users\gtalarico\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Debug\SandwichWatcher.pdb
 C:\Users\gtalarico\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\bin\Debug\NewtonSoft.Json.dll
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\bin\Debug\SandwichWatcher.dll
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\bin\Debug\SandwichWatcher.pdb
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Debug\SandwichWatcher.dll
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Debug\SandwichWatcher.pdb
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Debug\SandwichWatcher.g.resources
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Debug\SandwichWatcher.csproj.GenerateResource.Cache
+D:\Dropbox\Shared\dev\repos\project_sandwich\addin\src\watcher\SandwichWatcher\SandwichWatcher\obj\Debug\SandwichWatcher.Properties.Resources.resources

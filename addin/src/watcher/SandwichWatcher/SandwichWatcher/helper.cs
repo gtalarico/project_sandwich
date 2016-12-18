@@ -11,34 +11,38 @@ using Newtonsoft.Json;
 
 #endregion
 
-namespace Sandwich.Watcher
+namespace Sandwich
 {
-    public class JsonHelper {
-        const string PendingFolder = @"C:\Users\gtalarico\Dropbox\Shared\dev\repos\project_sandwich\jobs\pending";
-
-        public static HashSet<string> GetPaths(){
-
-            string[] fileEntries = Directory.GetFiles(PendingFolder);
-            HashSet<string> filePathList= new HashSet<string>();
-            foreach (string fileName in fileEntries)
-            {
-
-                filePathList.Add(getPathFromJson(fileName));
-            }
-
-                return filePathList;
-        }
-
-        static string getPathFromJson(string jsonPath)
+    public class JobHelper {
+        
+        // Gets Json Data from Json Filepath
+        public static Job GetJobJson(string jsonJobFilepath)
         {
-            using (StreamReader reader = new StreamReader(jsonPath))
+            using (StreamReader reader = new StreamReader(jsonJobFilepath))
             {
                 string json = reader.ReadToEnd();
-                dynamic jsonData = JsonConvert.DeserializeObject(json);
-                return jsonData.filepath;
+                Job jobData = JsonConvert.DeserializeObject<Job>(json);
+                return jobData;
             }
-            
+
         }
+
+        // Returns list of pending jobs
+        public static Queue<Job> GetPendingJobs(string PendingJobPath)
+
+        {
+            string[] fileEntries = Directory.GetFiles(PendingJobPath);
+            Queue<Job> filePathList = new Queue<Job>();
+
+            foreach (string fileName in fileEntries)
+            {
+                Job job = GetJobJson(fileName);
+                filePathList.Enqueue(job);
+            }
+
+            return filePathList;
+        }
+
 
     }
 }
